@@ -40,7 +40,7 @@ export default function App() {
 			</View>
 			<View style={styles.searchBar}>
 				<TextInput style={styles.searchInput} placeholder='Buscar'></TextInput>
-				<Pressable style={styles.filters} title='Filtros'>
+				<Pressable style={styles.filters}>
 					<Text>Filtros</Text>
 				</Pressable>
 			</View>
@@ -50,10 +50,10 @@ export default function App() {
 				data={suggestions}
 				renderItem={(suggestion) => (
 					<View style={styles.suggestion}>
-						<Text>{suggestion.item}</Text>
+						<Text style={styles.item}>{suggestion.item}</Text>
 					</View>
 				)}
-				keyExtractor={(item) => item.id}></FlatList>
+				keyExtractor={(item) => item}></FlatList>
 			<View style={styles.profiles}>
 				<View style={styles.profile}>
 					<Text>Perfil slider</Text>

@@ -52,7 +52,9 @@ export const styles = StyleSheet.create({
 	filters: {
 		position: 'absolute',
 		right: 10,
-		height: '100%',
+		height: 40,
+		justifyContent: 'center',
+		alignItems: 'center',
 		fontFamily: 'roboto',
 		color: '#757575',
 	},
@@ -67,8 +69,14 @@ export const styles = StyleSheet.create({
 		width: 90,
 		padding: 50,
 		alignItems: 'center',
+		justifyContent: 'center',
 		height: 25,
 		margin: 5,
+		position: 'relative',
+	},
+	item: {
+		position: 'absolute',
+		color: 'black',
 	},
 	footer: {
 		flexDirection: 'row',
@@ -94,11 +102,12 @@ export const styles = StyleSheet.create({
 		width: '100%',
 	},
 	profile: {
+		borderRadius: 5,
 		borderColor: colors.azul,
 		borderWidth: 2,
 		justifyContent: 'center',
 		alignItems: 'center',
-		height: 300,
+		height: 270,
 		margin: 10,
 	},
 });
