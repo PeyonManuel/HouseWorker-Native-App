@@ -28,7 +28,7 @@ export default function App() {
 
 	return (
 		<View style={styles.container}>
-			{/* <StatusBar style={{ flex: 1 }} /> */}
+			{/* <StatusBar style={{ height: 200 }} /> */}
 			{currentScreen === 0 && (
 				<MainScreen
 					setCurrentScreen={setCurrentScreen}

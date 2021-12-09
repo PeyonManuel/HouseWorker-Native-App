@@ -79,7 +79,8 @@ export const styles = StyleSheet.create({
 	footer: {
 		flexDirection: 'row',
 		justifyContent: 'space-around',
-		width: '100%',
+		paddingHorizontal: 50,
+		width: Dimensions.get('window').width,
 		padding: 20,
 		elevation: 5,
 		shadowColor: '#000',
@@ -87,11 +88,14 @@ export const styles = StyleSheet.create({
 		shadowOpacity: 0.8,
 		shadowRadius: 1,
 		height: 60,
+		position: 'relative',
 	},
 	footerSeparator: {
-		width: 2,
-		height: '75%',
-		position: 'absolute',
+		width: 0,
+		borderColor: colors.azul,
+		borderWidth: 1,
+		height: '100%',
+		left: '100%',
 		color: colors.azul,
 	},
 	profiles: {
