@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
+
+import { SearchScreenStyles } from './SearchScreenStyles';
 
 const colors = {
 	azul: '#0455BF',
@@ -9,13 +11,11 @@ export const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: '#fff',
 		alignItems: 'center',
-		paddingLeft: 10,
-		paddingRight: 10,
-		paddingTop: 40,
+		paddingHorizontal: 10,
 	},
-
 	top: {
-		width: '100%',
+		width: Dimensions.get('window').width,
+		paddingHorizontal: 10,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
@@ -97,7 +97,7 @@ export const styles = StyleSheet.create({
 	profiles: {
 		marginTop: 30,
 		marginBottom: 30,
-		width: '100%',
+		width: Dimensions.get('window').width * 0.9,
 	},
 	profile: {
 		borderRadius: 5,
@@ -110,14 +110,23 @@ export const styles = StyleSheet.create({
 	},
 	closeFiltersBtn: {
 		position: 'absolute',
-		right: 10,
-		fontWeight: 'bold',
-		fontSize: 20,
+		top: 5,
+		right: 5,
+		padding: 10,
+		zIndex: 2,
 	},
 	h1: {
 		fontWeight: 'bold',
-		margin: 10,
+		padding: 10,
+		marginBottom: 10,
 		fontSize: 18,
+		backgroundColor: colors.azul,
+		width: Dimensions.get('window').width,
+	},
+	h2: {
+		fontWeight: 'bold',
+		color: 'black',
+		fontSize: 16,
 	},
 	filtersContainer: {
 		borderColor: colors.azul,
@@ -131,4 +140,5 @@ export const styles = StyleSheet.create({
 		borderColor: colors.azul,
 		borderBottomWidth: 1,
 	},
+	...SearchScreenStyles,
 });

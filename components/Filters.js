@@ -1,8 +1,17 @@
-import { Button, FlatList, Modal, Pressable, Text, View } from 'react-native';
+import {
+	Button,
+	FlatList,
+	Modal,
+	Pressable,
+	Text,
+	TouchableOpacity,
+	View,
+} from 'react-native';
 import React, { useState } from 'react';
 
 import CheckCircle from '../svgs/CheckCircle';
-import { styles } from '../styles';
+import Times from '../svgs/Times';
+import { styles } from '../styles/styles';
 
 export const Filters = ({ openFilters, setOpenFilters }) => {
 	const [profesions, setProfesions] = useState([
@@ -17,13 +26,12 @@ export const Filters = ({ openFilters, setOpenFilters }) => {
 	const [rating, setRating] = useState([]);
 	return (
 		<Modal visible={openFilters}>
-			<Pressable
-				title='X'
+			<TouchableOpacity
 				style={styles.closeFiltersBtn}
 				onPress={() => setOpenFilters(false)}>
-				<Text>X</Text>
-			</Pressable>
-			<Text style={{ ...styles.h1, marginTop: 30 }}>Profesión</Text>
+				{<Times style={{ width: 20, height: 20, color: 'black' }} />}
+			</TouchableOpacity>
+			<Text style={styles.h1}>Profesión</Text>
 			<View style={styles.filtersContainer}>
 				<FlatList
 					data={profesions}
