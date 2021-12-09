@@ -49,14 +49,12 @@ export const styles = StyleSheet.create({
 		width: '100%',
 		marginRight: 10,
 	},
-	filters: {
+	filtersBtn: {
 		position: 'absolute',
 		right: 10,
 		height: 40,
 		justifyContent: 'center',
 		alignItems: 'center',
-		fontFamily: 'roboto',
-		color: '#757575',
 	},
 	suggestionsContainer: {
 		marginTop: 20,
@@ -109,5 +107,28 @@ export const styles = StyleSheet.create({
 		alignItems: 'center',
 		height: 270,
 		margin: 10,
+	},
+	closeFiltersBtn: {
+		position: 'absolute',
+		right: 10,
+		fontWeight: 'bold',
+		fontSize: 20,
+	},
+	h1: {
+		fontWeight: 'bold',
+		margin: 10,
+		fontSize: 18,
+	},
+	filtersContainer: {
+		borderColor: colors.azul,
+		borderTopWidth: 1,
+	},
+	filterItem: {
+		padding: 10,
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		backgroundColor: 'rgba(168, 218, 235, 0.25)',
+		borderColor: colors.azul,
+		borderBottomWidth: 1,
 	},
 });
