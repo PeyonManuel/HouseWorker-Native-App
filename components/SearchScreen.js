@@ -9,7 +9,6 @@ export const SearchScreen = () => {
 	const searchResults = results;
 	return (
 		<View>
-			<Text style={styles.h1}>Resultados</Text>
 			<FlatList
 				data={searchResults}
 				renderItem={({ item }) => <SearchResult result={item} />}

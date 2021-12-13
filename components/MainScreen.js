@@ -1,5 +1,4 @@
 import {
-	BackHandler,
 	FlatList,
 	Image,
 	Pressable,
@@ -7,16 +6,12 @@ import {
 	TextInput,
 	View,
 } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 
 import { Filters } from '../components/Filters.js';
 import { styles } from '../styles/styles';
 
-export const MainScreen = ({ setCurrentScreen, setLastScreen }) => {
-	const [logo, setLogo] = useState(null);
-	useEffect(() => {
-		setLogo(require('../images/Logo.png'));
-	}, []);
+export const MainScreen = ({ navigation }) => {
 	const suggestions = [
 		'Pintor',
 		'Gasista',
@@ -28,14 +23,9 @@ export const MainScreen = ({ setCurrentScreen, setLastScreen }) => {
 	const [openFilters, setOpenFilters] = useState(false);
 
 	return (
-		<View style={styles.container}>
+		<View style={{ ...styles.container, paddingHorizontal: 10 }}>
 			<Filters openFilters={openFilters} setOpenFilters={setOpenFilters} />
-			<View style={styles.top}>
-				<View style={styles.imgContainer}>
-					<Image style={styles.img} source={logo} />
-				</View>
-				<Text style={styles.link}>Mi perfil</Text>
-			</View>
+
 			<View style={styles.searchBar}>
 				<TextInput style={styles.searchInput} placeholder='Buscar'></TextInput>
 				<Pressable
@@ -53,8 +43,7 @@ export const MainScreen = ({ setCurrentScreen, setLastScreen }) => {
 				renderItem={(suggestion) => (
 					<Pressable
 						onPress={() => {
-							setLastScreen(0);
-							setCurrentScreen(1);
+							navigation.navigate('search');
 						}}
 						style={styles.suggestion}>
 						<Text style={styles.item}>{suggestion.item}</Text>
@@ -65,11 +54,6 @@ export const MainScreen = ({ setCurrentScreen, setLastScreen }) => {
 				<View style={styles.profile}>
 					<Text>Perfil slider</Text>
 				</View>
-			</View>
-			<View style={styles.footer}>
-				<Text>Profile</Text>
-				<View style={styles.footerSeparator} />
-				<Text>Trabajos cortos</Text>
 			</View>
 		</View>
 	);

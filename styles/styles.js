@@ -1,8 +1,9 @@
 import { Dimensions, StyleSheet } from 'react-native';
 
 import { SearchScreenStyles } from './SearchScreenStyles';
+import { StatusBar } from 'expo-status-bar';
 
-const colors = {
+export const colors = {
 	azul: '#0455BF',
 };
 
@@ -10,16 +11,15 @@ export const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#fff',
-		alignItems: 'center',
-		paddingHorizontal: 10,
 	},
 	top: {
-		width: Dimensions.get('window').width,
-		paddingHorizontal: 10,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		backgroundColor: '#ffff',
+		backgroundColor: 'white',
+		paddingHorizontal: 10,
+		paddingTop: 35,
+		paddingBottom: 10,
 	},
 	imgContainer: {
 		height: 40,
@@ -36,7 +36,6 @@ export const styles = StyleSheet.create({
 		fontSize: 18,
 	},
 	searchBar: {
-		marginTop: 20,
 		borderRadius: 5,
 		backgroundColor: '#F1F1F1',
 		height: 40,
@@ -99,9 +98,8 @@ export const styles = StyleSheet.create({
 		color: colors.azul,
 	},
 	profiles: {
-		marginTop: 30,
-		marginBottom: 30,
-		width: Dimensions.get('window').width * 0.9,
+		marginTop: 15,
+		marginBottom: 15,
 	},
 	profile: {
 		borderRadius: 5,
