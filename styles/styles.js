@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 
+import { LoginStyles } from './LoginStyles';
 import { SearchScreenStyles } from './SearchScreenStyles';
-import { StatusBar } from 'expo-status-bar';
 
 export const colors = {
 	azul: '#0455BF',
@@ -36,6 +36,7 @@ export const styles = StyleSheet.create({
 		fontSize: 18,
 	},
 	searchBar: {
+		flex: 1,
 		borderRadius: 5,
 		backgroundColor: '#F1F1F1',
 		height: 40,
@@ -57,7 +58,11 @@ export const styles = StyleSheet.create({
 	},
 	suggestionsContainer: {
 		marginTop: 20,
+		flexWrap: 'wrap',
 		alignItems: 'center',
+		alignContent: 'center',
+		width: '100%',
+		flex: 9,
 	},
 	suggestion: {
 		borderRadius: 5,
@@ -100,6 +105,7 @@ export const styles = StyleSheet.create({
 	profiles: {
 		marginTop: 15,
 		marginBottom: 15,
+		flex: 8,
 	},
 	profile: {
 		borderRadius: 5,
@@ -107,7 +113,7 @@ export const styles = StyleSheet.create({
 		borderWidth: 2,
 		justifyContent: 'center',
 		alignItems: 'center',
-		height: 270,
+		flex: 1,
 		margin: 10,
 	},
 	closeFiltersBtn: {
@@ -142,5 +148,11 @@ export const styles = StyleSheet.create({
 		borderColor: colors.azul,
 		borderBottomWidth: 1,
 	},
+	errorMessage: {
+		padding: 10,
+		backgroundColor: '#ffcccb',
+		borderRadius: 5,
+	},
 	...SearchScreenStyles,
+	...LoginStyles,
 });

@@ -1,16 +1,17 @@
 import { FlatList, Text, View } from 'react-native';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import React from 'react';
 import { SearchResult } from './SearchResult';
-import { results } from '../data';
 import { styles } from '../styles/styles';
 
 export const SearchScreen = () => {
-	const searchResults = results;
+	const dispatch = useDispatch();
+	const profiles = useSelector((state) => state.profiles.profiles);
 	return (
 		<View>
 			<FlatList
-				data={searchResults}
+				data={profiles}
 				renderItem={({ item }) => <SearchResult result={item} />}
 				keyExtractor={(item) => item.id}
 			/>

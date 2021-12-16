@@ -1,9 +1,10 @@
-export const results = [
+export const profiles = [
 	{
 		id: 0,
 		imgUrl: '../images/pexels-photo-771742.jpeg',
 		name: 'Pablo',
 		rating: 4.5,
+		profesion: 0,
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan ante ac massa semper condimentum. Duis at dignissim arcu, id hendrerit ante. Maecenas ut tellus aliquet, aliquam quam ac, tristique neque. Nam a lorem tellus. Phasellus felis sem, blandit sed pulvinar nec, semper sed tellus. Ut efficitur maximus nisi, nec aliquam dolor facilisis id. Donec nec malesuada lorem. Maecenas tortor nisi, mollis efficitur congue at, pulvinar vehicula est. Donec quis tincidunt neque. Sed posuere maximus lobortis. Proin commodo eget dui id fringilla. Nam nec pretium tellus. Aenean congue, felis in consequat lacinia, quam mi consequat ex, quis posuere arcu lacus nec leo. Cras vestibulum iaculis diam, non accumsan elit. Curabitur venenatis risus id tortor convallis blandit. Mauris odio lectus, tempus convallis nisl gravida, aliquet cursus odio.',
 	},
@@ -11,6 +12,8 @@ export const results = [
 		id: 1,
 		imgUrl: '../images/pexels-photo-771742.jpeg',
 		name: 'Jorge',
+		profesion: 0,
+		rating: 3.7,
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan ante ac massa semper condimentum. Duis at dignissim arcu, id hendrerit ante. Maecenas ut tellus aliquet, aliquam quam ac, tristique neque. Nam a lorem tellus. Phasellus felis sem, blandit sed pulvinar nec, semper sed tellus. Ut efficitur maximus nisi, nec aliquam dolor facilisis id. Donec nec malesuada lorem. Maecenas tortor nisi, mollis efficitur congue at, pulvinar vehicula est. Donec quis tincidunt neque. Sed posuere maximus lobortis. Proin commodo eget dui id fringilla. Nam nec pretium tellus. Aenean congue, felis in consequat lacinia, quam mi consequat ex, quis posuere arcu lacus nec leo. Cras vestibulum iaculis diam, non accumsan elit. Curabitur venenatis risus id tortor convallis blandit. Mauris odio lectus, tempus convallis nisl gravida, aliquet cursus odio.',
 	},
@@ -18,6 +21,7 @@ export const results = [
 		id: 2,
 		imgUrl: '../images/pexels-photo-771742.jpeg',
 		name: 'Sofia',
+		profesion: 1,
 		rating: 4.2,
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan ante ac massa semper condimentum. Duis at dignissim arcu, id hendrerit ante. Maecenas ut tellus aliquet, aliquam quam ac, tristique neque. Nam a lorem tellus. Phasellus felis sem, blandit sed pulvinar nec, semper sed tellus. Ut efficitur maximus nisi, nec aliquam dolor facilisis id. Donec nec malesuada lorem. Maecenas tortor nisi, mollis efficitur congue at, pulvinar vehicula est. Donec quis tincidunt neque. Sed posuere maximus lobortis. Proin commodo eget dui id fringilla. Nam nec pretium tellus. Aenean congue, felis in consequat lacinia, quam mi consequat ex, quis posuere arcu lacus nec leo. Cras vestibulum iaculis diam, non accumsan elit. Curabitur venenatis risus id tortor convallis blandit. Mauris odio lectus, tempus convallis nisl gravida, aliquet cursus odio.',
@@ -27,6 +31,7 @@ export const results = [
 		imgUrl: '../images/pexels-photo-771742.jpeg',
 		name: 'Matilda',
 		rating: 4.2,
+		profesion: 2,
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan ante ac massa semper condimentum. Duis at dignissim arcu, id hendrerit ante. Maecenas ut tellus aliquet, aliquam quam ac, tristique neque. Nam a lorem tellus. Phasellus felis sem, blandit sed pulvinar nec, semper sed tellus. Ut efficitur maximus nisi, nec aliquam dolor facilisis id. Donec nec malesuada lorem. Maecenas tortor nisi, mollis efficitur congue at, pulvinar vehicula est. Donec quis tincidunt neque. Sed posuere maximus lobortis. Proin commodo eget dui id fringilla. Nam nec pretium tellus. Aenean congue, felis in consequat lacinia, quam mi consequat ex, quis posuere arcu lacus nec leo. Cras vestibulum iaculis diam, non accumsan elit. Curabitur venenatis risus id tortor convallis blandit. Mauris odio lectus, tempus convallis nisl gravida, aliquet cursus odio.',
 	},
@@ -35,6 +40,7 @@ export const results = [
 		imgUrl: '../images/pexels-photo-771742.jpeg',
 		name: 'Santiago',
 		rating: 3.9,
+		profesion: 3,
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan ante ac massa semper condimentum. Duis at dignissim arcu, id hendrerit ante. Maecenas ut tellus aliquet, aliquam quam ac, tristique neque. Nam a lorem tellus. Phasellus felis sem, blandit sed pulvinar nec, semper sed tellus. Ut efficitur maximus nisi, nec aliquam dolor facilisis id. Donec nec malesuada lorem. Maecenas tortor nisi, mollis efficitur congue at, pulvinar vehicula est. Donec quis tincidunt neque. Sed posuere maximus lobortis. Proin commodo eget dui id fringilla. Nam nec pretium tellus. Aenean congue, felis in consequat lacinia, quam mi consequat ex, quis posuere arcu lacus nec leo. Cras vestibulum iaculis diam, non accumsan elit. Curabitur venenatis risus id tortor convallis blandit. Mauris odio lectus, tempus convallis nisl gravida, aliquet cursus odio.',
 	},
