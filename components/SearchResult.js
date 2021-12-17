@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { styles } from '../styles/styles';
 
 export const SearchResult = ({ result }) => {
-	// const image = result.imgUrl;
+	console.log(result);
 	return (
 		<View style={styles.searchResult}>
 			<Image
