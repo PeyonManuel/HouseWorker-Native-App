@@ -2,7 +2,7 @@ import { Pressable, Text, TextInput, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { signInProfile } from '../store/actions/profileActions';
+import { signInProfile } from '../store/actions/userActions';
 import { styles } from '../styles/styles';
 
 export const LoginScreen = ({ navigation }) => {
@@ -19,9 +19,6 @@ export const LoginScreen = ({ navigation }) => {
 	const handleSignInBtn = () => {
 		dispatch(signInProfile({ email: values.email, password: values.password }));
 	};
-	useEffect(() => {
-		console.log(error);
-	}, [error]);
 	return (
 		<View
 			style={{
@@ -37,8 +34,8 @@ export const LoginScreen = ({ navigation }) => {
 					onChangeText={(value) => handleValuesChange('email', value)}
 					placeholder='Correo electronico'></TextInput>
 				<TextInput
+					secureTextEntry={true}
 					style={styles.loginInput}
-					keyboardType='email-address'
 					autoCapitalize='none'
 					onChangeText={(value) => handleValuesChange('password', value)}
 					placeholder='Contraseña'></TextInput>

@@ -105,5 +105,5 @@ export const Navigator = () => {
 			</Tab.Navigator>
 		</NavigationContainer>
 	);
-	return <>{userId ? <MainNavigator /> : <LoginNavigator />}</>;
+	return <>{!userId ? <MainNavigator /> : <LoginNavigator />}</>;
 };

@@ -1,35 +1,16 @@
 import {
-	SIGN_IN_FAIL,
-	SIGN_IN_REQUEST,
-	SIGN_IN_SUCCESS,
-	SIGN_UP_FAIL,
-	SIGN_UP_REQUEST,
-	SIGN_UP_SUCCESS,
+	GET_PROFILES_FAIL,
+	GET_PROFILES_REQUEST,
+	GET_PROFILES_SUCCESS,
 } from '../actions/profileActions';
 
-import { combineReducers } from 'redux';
-
-export const signUpReducer = (state = {}, action) => {
+export const getProfilesReducer = (state = {}, action) => {
 	switch (action.type) {
-		case SIGN_UP_REQUEST:
+		case GET_PROFILES_REQUEST:
 			return { loading: true };
-		case SIGN_UP_SUCCESS:
-			return { loading: false };
-		case SIGN_UP_FAIL:
-			return { loading: false, error: action.payload.error };
-
-		default:
-			return state;
-	}
-};
-
-export const logInReducer = (state = {}, action) => {
-	switch (action.type) {
-		case SIGN_IN_REQUEST:
-			return { loading: true };
-		case SIGN_IN_SUCCESS:
-			return { loading: false, ...action.payload };
-		case SIGN_IN_FAIL:
+		case GET_PROFILES_SUCCESS:
+			return { loading: false, profiles: action.payload.profiles };
+		case GET_PROFILES_FAIL:
 			return { loading: false, error: action.payload.error };
 		default:
 			return state;

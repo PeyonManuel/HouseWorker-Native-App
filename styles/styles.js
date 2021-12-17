@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
 		fontSize: 18,
 	},
 	searchBar: {
-		flex: 1,
+		flex: 0.7,
 		borderRadius: 5,
 		backgroundColor: '#F1F1F1',
 		height: 40,
@@ -48,13 +48,7 @@ export const styles = StyleSheet.create({
 	searchInput: {
 		width: '100%',
 		marginRight: 10,
-	},
-	filtersBtn: {
-		position: 'absolute',
-		right: 10,
-		height: 40,
-		justifyContent: 'center',
-		alignItems: 'center',
+		fontWeight: 'bold',
 	},
 	suggestionsContainer: {
 		marginTop: 20,
@@ -136,6 +130,10 @@ export const styles = StyleSheet.create({
 		color: 'black',
 		fontSize: 16,
 	},
+	h4: {
+		fontWeight: 'bold',
+		fontSize: 12,
+	},
 	filtersContainer: {
 		borderColor: colors.azul,
 		borderTopWidth: 1,
@@ -152,6 +150,17 @@ export const styles = StyleSheet.create({
 		padding: 10,
 		backgroundColor: '#ffcccb',
 		borderRadius: 5,
+	},
+	searchBtn: {
+		flex: 1,
+		alignSelf: 'center',
+		width: Dimensions.get('window').width * 0.95,
+		alignItems: 'center',
+		padding: 10,
+		height: 30,
+		marginBottom: 15,
+		borderRadius: 5,
+		backgroundColor: colors.azul,
 	},
 	...SearchScreenStyles,
 	...LoginStyles,

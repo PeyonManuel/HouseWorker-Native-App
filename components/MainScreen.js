@@ -19,27 +19,23 @@ export const MainScreen = ({ navigation }) => {
 	return (
 		<View style={{ ...styles.container, paddingHorizontal: 10 }}>
 			<Filters openFilters={openFilters} setOpenFilters={setOpenFilters} />
-			<View style={styles.searchBar}>
-				<TextInput style={styles.searchInput} placeholder='Buscar'></TextInput>
-				<Pressable
-					style={styles.filtersBtn}
-					onPress={() => setOpenFilters(true)}>
-					<Text style={{ fontFamily: 'Inter', fontWeight: 'bold' }}>
-						Filtros
-					</Text>
-				</Pressable>
-			</View>
+			<Pressable onPress={() => setOpenFilters(true)} style={styles.searchBar}>
+				<Text style={styles.searchInput}>Busqueda con filtros</Text>
+			</Pressable>
 			{loading ? (
-				<Text>Cargando</Text>
+				<Text style={styles.suggestionsContainer}>Cargando</Text>
 			) : error ? (
-				<Text>{error}</Text>
+				<Text style={styles.suggestionsContainer}>{error}</Text>
 			) : (
 				<View style={styles.suggestionsContainer}>
 					{profesions.map((prof) => (
 						<Pressable
 							key={prof.id}
 							onPress={() => {
-								navigation.navigate('search');
+								navigation.navigate({
+									name: 'search',
+									params: { filters: { profesion: prof.id, rating: -1 } },
+								});
 							}}
 							style={styles.suggestion}>
 							<Text style={styles.item}>{prof.name}</Text>

@@ -13,7 +13,8 @@ export const SearchResult = ({ result }) => {
 			/>
 			<View style={{ flex: 4, padding: 4 }}>
 				<Text style={styles.h2}>{result.name}</Text>
-				<Text numberOfLines={4} style={styles.searchResultDescription}>
+				<Text style={styles.h4}>{result.profesion}</Text>
+				<Text numberOfLines={3} style={styles.searchResultDescription}>
 					{result.description}
 				</Text>
 			</View>

@@ -2,7 +2,7 @@ import { Image, Pressable, Text, TextInput, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { registerProfile } from '../store/actions/profileActions';
+import { registerProfile } from '../store/actions/userActions';
 import { styles } from '../styles/styles';
 
 export const RegisterScreen = ({ navigation }) => {
