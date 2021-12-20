@@ -1,7 +1,15 @@
-import { FlatList, Pressable, Text, TextInput, View } from 'react-native';
+import {
+	FlatList,
+	Image,
+	Pressable,
+	Text,
+	TextInput,
+	View,
+} from 'react-native';
 import React, { Fragment, useEffect, useState } from 'react';
 
 import { Filters } from '../components/Filters.js';
+import { fetchUser } from '../db/index.js';
 import { getProfesions } from '../store/actions/profesionActions.js';
 import { styles } from '../styles/styles';
 import { useDispatch } from 'react-redux';
@@ -17,8 +25,13 @@ export const MainScreen = ({ navigation }) => {
 	const [openFilters, setOpenFilters] = useState(false);
 
 	return (
-		<View style={{ ...styles.container, paddingHorizontal: 10 }}>
+		<View style={{ ...styles.container }}>
 			<Filters openFilters={openFilters} setOpenFilters={setOpenFilters} />
+			<View style={styles.top}>
+				<View style={styles.imgContainer}>
+					<Image style={styles.img} source={require('../images/Logo.png')} />
+				</View>
+			</View>
 			<Pressable onPress={() => setOpenFilters(true)} style={styles.searchBar}>
 				<Text style={styles.searchInput}>Busqueda con filtros</Text>
 			</Pressable>

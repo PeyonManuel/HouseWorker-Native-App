@@ -1,15 +1,17 @@
 import { Pressable, Text, TextInput, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
+import { colors, styles } from '../styles/styles';
 import { useDispatch, useSelector } from 'react-redux';
 
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import { signInProfile } from '../store/actions/userActions';
-import { styles } from '../styles/styles';
 
 export const LoginScreen = ({ navigation }) => {
 	const dispatch = useDispatch();
 	const logInRef = useSelector((state) => state.logIn);
 	const { loading, error } = logInRef;
 	const [values, setValues] = useState({ email: '', password: '' });
+	const [remember, setRemember] = useState(false);
 	const handleValuesChange = (name, value) => {
 		setValues({
 			...values,
@@ -17,7 +19,13 @@ export const LoginScreen = ({ navigation }) => {
 		});
 	};
 	const handleSignInBtn = () => {
-		dispatch(signInProfile({ email: values.email, password: values.password }));
+		dispatch(
+			signInProfile({
+				email: values.email,
+				password: values.password,
+				remember,
+			})
+		);
 	};
 	return (
 		<View
@@ -28,17 +36,23 @@ export const LoginScreen = ({ navigation }) => {
 			}}>
 			<View style={styles.loginBox}>
 				<TextInput
-					style={styles.loginInput}
+					style={styles.generalInput}
 					keyboardType='email-address'
 					autoCapitalize='none'
 					onChangeText={(value) => handleValuesChange('email', value)}
 					placeholder='Correo electronico'></TextInput>
 				<TextInput
 					secureTextEntry={true}
-					style={styles.loginInput}
+					style={styles.generalInput}
 					autoCapitalize='none'
 					onChangeText={(value) => handleValuesChange('password', value)}
 					placeholder='Contraseña'></TextInput>
+				<BouncyCheckbox
+					style={{ alignSelf: 'flex-start', marginBottom: 10 }}
+					onPress={() => setRemember(!remember)}
+					fillColor={colors.azul}
+					textComponent={<Text style={{ marginLeft: 5 }}>Recordarme</Text>}
+				/>
 				<Pressable
 					style={
 						!loading

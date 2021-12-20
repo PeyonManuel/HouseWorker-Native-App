@@ -4,8 +4,6 @@ import {
 	GET_PROFESIONS_SUCCESS,
 } from '../actions/profesionActions';
 
-import { profesions } from '../../data';
-
 const initialState = {
 	loading: true,
 };

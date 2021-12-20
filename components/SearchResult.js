@@ -4,13 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { styles } from '../styles/styles';
 
 export const SearchResult = ({ result }) => {
-	console.log(result);
 	return (
 		<View style={styles.searchResult}>
-			<Image
-				style={styles.searchResultImage}
-				source={require('../images/pexels-photo-771742.jpeg')}
-			/>
+			<Image style={styles.searchResultImage} source={{ uri: result.imgUrl }} />
 			<View style={{ flex: 4, padding: 4 }}>
 				<Text style={styles.h2}>{result.name}</Text>
 				<Text style={styles.h4}>{result.profesion}</Text>

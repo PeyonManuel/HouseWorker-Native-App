@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import {
+	createProfileReducer,
 	getProfileReducer,
 	getProfilesReducer,
 } from './reducers/profileReducer';
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
 	signUp: signUpReducer,
 	getProfiles: getProfilesReducer,
 	getProfile: getProfileReducer,
+	createProfile: createProfileReducer,
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));

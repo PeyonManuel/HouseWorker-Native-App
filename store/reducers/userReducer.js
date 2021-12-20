@@ -2,6 +2,7 @@ import {
 	SIGN_IN_FAIL,
 	SIGN_IN_REQUEST,
 	SIGN_IN_SUCCESS,
+	SIGN_OUT_SUCCESS,
 	SIGN_UP_FAIL,
 	SIGN_UP_REQUEST,
 	SIGN_UP_SUCCESS,
@@ -27,6 +28,8 @@ export const logInReducer = (state = {}, action) => {
 			return { loading: true };
 		case SIGN_IN_SUCCESS:
 			return { loading: false, ...action.payload };
+		case SIGN_OUT_SUCCESS:
+			return {};
 		case SIGN_IN_FAIL:
 			return { loading: false, error: action.payload.error };
 		default:

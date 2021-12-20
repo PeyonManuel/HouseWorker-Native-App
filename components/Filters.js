@@ -98,7 +98,7 @@ export const Filters = ({ openFilters, setOpenFilters }) => {
 							/>
 						</View>
 					</View>
-					<Pressable style={styles.searchBtn}>
+					<Pressable style={styles.wideBtn}>
 						<Text
 							style={{ fontWeight: 'bold', color: 'white' }}
 							onPress={() => {

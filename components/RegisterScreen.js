@@ -31,13 +31,13 @@ export const RegisterScreen = ({ navigation }) => {
 			<View style={styles.loginBox}>
 				<TextInput
 					onChangeText={(value) => handleValuesChange('email', value)}
-					style={styles.loginInput}
+					style={styles.generalInput}
 					keyboardType='email-address'
 					autoCapitalize='none'
 					placeholder='Correo electronico'></TextInput>
 				<TextInput
 					onChangeText={(value) => handleValuesChange('password', value)}
-					style={styles.loginInput}
+					style={styles.generalInput}
 					autoCapitalize='none'
 					placeholder='Contraseña'></TextInput>
 				<Pressable

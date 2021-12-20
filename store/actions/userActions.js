@@ -4,9 +4,13 @@ export const SIGN_UP_FAIL = 'SIGN_UP_FAIL';
 export const SIGN_IN_REQUEST = 'SIGN_IN_REQUEST';
 export const SIGN_IN_SUCCESS = 'SIGN_IN_SUCCESS';
 export const SIGN_IN_FAIL = 'SIGN_IN_FAIL';
+export const SIGN_OUT_SUCCESS = 'SIGN_OUT_SUCCESS';
+
+import { insertUser, removeUser } from '../../db/index.js';
 
 import { URL_AUTH_SIGNIN_WPASSWORD } from '../../firebase/database.js';
 import { URL_AUTH_SIGNUP } from '../../firebase/database.js';
+
 export const registerProfile =
 	({ email, password }) =>
 	async (dispatch) => {
@@ -41,7 +45,7 @@ export const registerProfile =
 	};
 
 export const signInProfile =
-	({ email, password }) =>
+	({ email, password, remember }) =>
 	async (dispatch) => {
 		dispatch({ type: SIGN_IN_REQUEST });
 		const response = await fetch(URL_AUTH_SIGNIN_WPASSWORD, {
@@ -57,6 +61,10 @@ export const signInProfile =
 		});
 		const data = await response.json();
 		if (!data.error) {
+			removeUser();
+			if (remember) {
+				insertUser(email, password);
+			}
 			dispatch({
 				type: SIGN_IN_SUCCESS,
 				payload: { token: data.idToken, userId: data.localId },
@@ -69,3 +77,8 @@ export const signInProfile =
 			});
 		}
 	};
+
+export const signOutProfile = () => (dispatch) => {
+	removeUser();
+	dispatch({ type: SIGN_OUT_SUCCESS });
+};
