@@ -1,14 +1,13 @@
 import { Pressable, Text, TextInput, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { colors, styles } from '../styles/styles';
+import { createProfile, getProfile } from '../store/actions/profileActions';
 import { ref, uploadBytes } from '@firebase/storage';
 import { useDispatch, useSelector } from 'react-redux';
 
 import AppLoading from 'expo-app-loading';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { ImageSelector } from './ImageSelector';
-import { NavigationContainer } from '@react-navigation/native';
-import { createProfile } from '../store/actions/profileActions';
 import { fireStorage } from '../firebase/config';
 import { getProfesions } from '../store/actions/profesionActions';
 import { v4 as uuidv4 } from 'uuid';

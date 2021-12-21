@@ -39,6 +39,7 @@ export const RegisterScreen = ({ navigation }) => {
 					onChangeText={(value) => handleValuesChange('password', value)}
 					style={styles.generalInput}
 					autoCapitalize='none'
+					secureTextEntry={true}
 					placeholder='Contraseña'></TextInput>
 				<Pressable
 					style={

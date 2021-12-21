@@ -21,6 +21,6 @@ export const SearchScreenStyles = StyleSheet.create({
 		right: 10,
 		top: 10,
 		fontWeight: 'bold',
-		color: 'gold',
+		color: 'goldenrod',
 	},
 });

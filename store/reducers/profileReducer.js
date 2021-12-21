@@ -1,4 +1,5 @@
 import {
+	CREATE_PROFILE_CLEANUP,
 	CREATE_PROFILE_FAIL,
 	CREATE_PROFILE_REQUEST,
 	CREATE_PROFILE_SUCCESS,
@@ -36,14 +37,16 @@ export const getProfileReducer = (state = {}, action) => {
 	}
 };
 
-export const createProfileReducer = (state = {}, action) => {
+export const createProfileReducer = (state = { created: false }, action) => {
 	switch (action.type) {
 		case CREATE_PROFILE_REQUEST:
-			return { loading: true };
+			return { loading: true, created: false };
 		case CREATE_PROFILE_SUCCESS:
 			return { loading: false, created: true };
 		case CREATE_PROFILE_FAIL:
-			return { loading: false, error: action.payload.error };
+			return { loading: false, error: action.payload.error, created: false };
+		case CREATE_PROFILE_CLEANUP:
+			return {};
 		default:
 			return state;
 	}

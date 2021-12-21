@@ -19,17 +19,21 @@ export const GET_PROFILE_FAIL = 'GET_PROFILE_FAIL';
 export const CREATE_PROFILE_REQUEST = 'CREATE_PROFILE_REQUEST';
 export const CREATE_PROFILE_SUCCESS = 'CREATE_PROFILE_SUCCESS';
 export const CREATE_PROFILE_FAIL = 'CREATE_PROFILE_FAIL';
+export const CREATE_PROFILE_CLEANUP = 'CREATE_PROFILE_CLEANUP';
 
 export const getProfiles = (filters) => (dispatch) => {
 	dispatch({ type: GET_PROFILES_REQUEST });
 	const profilesRef = collection(db, 'profiles');
 	let q = profilesRef;
-	if (filters.profesion !== -1 || filters.rating !== -1) {
+	if (filters.profesion !== -1) {
 		q = query(
 			profilesRef,
 			where('profesionId', '==', filters.profesion),
 			where('rating', '>=', filters.rating)
 		);
+	}
+	if (filters.profesion === -1 && filters.rating !== -1) {
+		q = query(profilesRef, where('rating', '>=', filters.rating));
 	}
 	getDocs(q)
 		.then((res) => {
@@ -37,7 +41,10 @@ export const getProfiles = (filters) => (dispatch) => {
 				id: doc.id,
 				...doc.data(),
 			}));
-			dispatch({ type: GET_PROFILES_SUCCESS, payload: { profiles } });
+			dispatch({
+				type: GET_PROFILES_SUCCESS,
+				payload: { profiles: profiles.reverse() },
+			});
 		})
 		.catch((error) =>
 			dispatch({ type: GET_PROFILES_FAIL, payload: { error } })
@@ -102,4 +109,8 @@ export const createProfile = (values) => (dispatch) => {
 		.catch((error) =>
 			dispatch({ type: CREATE_PROFILE_FAIL, payload: { error } })
 		);
+};
+
+export const createProfileCleanup = () => (dispatch) => {
+	dispatch({ type: CREATE_PROFILE_CLEANUP });
 };

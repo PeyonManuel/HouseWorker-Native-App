@@ -13,6 +13,7 @@ import { View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { fetchUser } from '../db';
+import { getProfile } from '../store/actions/profileActions';
 import { signInProfile } from '../store/actions/userActions';
 
 const profileStack = createNativeStackNavigator();
@@ -50,30 +51,31 @@ export const Navigator = () => {
 				})}
 				component={SearchScreen}
 			/>
-
-			<profileStack.Screen
-				name='createProfile'
-				options={() => ({
-					title: 'Crear perfil',
-					headerStyle: styles.h1,
-				})}
-				component={CreateProfileScreen}
-			/>
 		</profileStack.Navigator>
 	);
 
-	const myProfileRender = () => (
-		<myProfileStack.Navigator>
-			<myProfileStack.Screen
-				name='profile'
-				options={() => ({
-					title: 'Mi perfil',
-					headerStyle: styles.h1,
-				})}
-				component={MyProfileScreen}
-			/>
-		</myProfileStack.Navigator>
-	);
+	const myProfileRender = () => {
+		return (
+			<myProfileStack.Navigator>
+				<myProfileStack.Screen
+					name='profile'
+					options={() => ({
+						title: 'Mi perfil',
+						headerStyle: styles.h1,
+					})}
+					component={MyProfileScreen}
+				/>
+				<profileStack.Screen
+					name='createProfile'
+					options={() => ({
+						title: 'Crear perfil',
+						headerStyle: styles.h1,
+					})}
+					component={CreateProfileScreen}
+				/>
+			</myProfileStack.Navigator>
+		);
+	};
 	const MainNavigator = () => (
 		<NavigationContainer>
 			<Tab.Navigator

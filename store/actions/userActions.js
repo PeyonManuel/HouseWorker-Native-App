@@ -28,6 +28,7 @@ export const registerProfile =
 		});
 		const data = await response.json();
 		if (!data.error) {
+			removeUser();
 			dispatch({
 				type: SIGN_UP_SUCCESS,
 			});
@@ -61,7 +62,9 @@ export const signInProfile =
 		});
 		const data = await response.json();
 		if (!data.error) {
-			removeUser();
+			if (!remember) {
+				removeUser();
+			}
 			if (remember) {
 				insertUser(email, password);
 			}

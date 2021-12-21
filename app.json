@@ -1,12 +1,13 @@
 {
 	"expo": {
-		"name": "reactNative",
-		"slug": "reactNative",
+		"name": "House Worker",
+		"slug": "house-worker",
 		"version": "1.0.0",
 		"orientation": "portrait",
-		"icon": "./assets/icon.png",
+		"icon": "./images/Logo-splash-image.png",
+		"platforms": ["ios", "android"],
 		"splash": {
-			"image": "./assets/splash.png",
+			"image": "./images/Logo-splash-image.png",
 			"resizeMode": "contain",
 			"backgroundColor": "#ffffff"
 		},
@@ -15,11 +16,15 @@
 		},
 		"assetBundlePatterns": ["**/*"],
 		"ios": {
+			"bundleIdentifier": "house-worker",
+			"buildNumber": "1.0.0",
 			"supportsTablet": true
 		},
 		"android": {
+			"package": "com.houseworker.app",
+			"versionCode": 1,
 			"adaptiveIcon": {
-				"foregroundImage": "./assets/adaptive-icon.png",
+				"foregroundImage": "./images/Logo-splash-image.png",
 				"backgroundColor": "#FFFFFF"
 			},
 			"permissions": [

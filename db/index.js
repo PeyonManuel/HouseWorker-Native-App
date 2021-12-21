@@ -31,6 +31,7 @@ export const fetchUser = (setUser) => {
 				setUser({
 					email: results.rows._array[0].email,
 					password: results.rows._array[0].password,
+					remember: true,
 				});
 			}
 		});

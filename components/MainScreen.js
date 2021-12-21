@@ -25,7 +25,7 @@ export const MainScreen = ({ navigation }) => {
 	const [openFilters, setOpenFilters] = useState(false);
 
 	return (
-		<View style={{ ...styles.container }}>
+		<View style={styles.container}>
 			<Filters openFilters={openFilters} setOpenFilters={setOpenFilters} />
 			<View style={styles.top}>
 				<View style={styles.imgContainer}>
@@ -35,31 +35,29 @@ export const MainScreen = ({ navigation }) => {
 			<Pressable onPress={() => setOpenFilters(true)} style={styles.searchBar}>
 				<Text style={styles.searchInput}>Busqueda con filtros</Text>
 			</Pressable>
-			{loading ? (
-				<Text style={styles.suggestionsContainer}>Cargando</Text>
-			) : error ? (
-				<Text style={styles.suggestionsContainer}>{error}</Text>
-			) : (
-				<View style={styles.suggestionsContainer}>
-					{profesions.map((prof) => (
-						<Pressable
-							key={prof.id}
-							onPress={() => {
-								navigation.navigate({
-									name: 'search',
-									params: { filters: { profesion: prof.id, rating: -1 } },
-								});
-							}}
-							style={styles.suggestion}>
-							<Text style={styles.item}>{prof.name}</Text>
-						</Pressable>
-					))}
-				</View>
-			)}
-			<View style={styles.profiles}>
-				<View style={styles.profile}>
-					<Text>Perfil slider</Text>
-				</View>
+			<View style={{ flex: 1, justifyContent: 'center' }}>
+				<Text style={{ ...styles.h2, alignSelf: 'center' }}>Sugerencias</Text>
+				{loading ? (
+					<Text style={{ textAlign: 'center', marginTop: 10 }}>Cargando</Text>
+				) : error ? (
+					<Text style={styles.suggestionsContainer}>{error}</Text>
+				) : (
+					<View style={styles.suggestionsContainer}>
+						{profesions.map((prof) => (
+							<Pressable
+								key={prof.id}
+								onPress={() => {
+									navigation.navigate({
+										name: 'search',
+										params: { filters: { profesion: prof.id, rating: -1 } },
+									});
+								}}
+								style={styles.suggestion}>
+								<Text style={styles.item}>{prof.name}</Text>
+							</Pressable>
+						))}
+					</View>
+				)}
 			</View>
 		</View>
 	);
